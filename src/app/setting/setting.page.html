@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>setting</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div id="top" class="ion-padding">各種設定</div>
 
+  <!--
+  <form class="ion-padding-bottom" (submit)="setDistance()">
+    <ion-item lines="full">
+      <ion-label position="stacked">NABOR DIARYで表示する距離[km]</ion-label>
+      <ion-input required type="number" [(ngModel)]="distance" name="distance" placeholder="入力後「保存ボタン」で反映"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="base-green">保存</ion-button>
+  </form>
+  -->
+
+  <ion-button expand="block" color="pink-middle" (click)="logout()">ログアウト</ion-button>
 </ion-content>

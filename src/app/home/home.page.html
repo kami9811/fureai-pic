@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-content>
+  <ion-card class="ion-margin-top" color="pink-light">
+    <ion-card-header>
+      <ion-card-title>きょうのしあい</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      7月23日　オリンピック　開会式
+      8月8日　オリンピック　閉会式
+    </ion-card-content>
+  </ion-card>
+  
   <div id="container">
-    <strong>Ready to create an app?</strong>
+    <div class="class3"><ion-fab vertical="top" horizontal="end" slot="fixed" (click)="onSettings()">
+      <ion-fab-button>
+        <ion-icon name="cog" size="large"></ion-icon>
+      </ion-fab-button>
+    </ion-fab></div>
+    <div class="class2 ion-padding"><ion-button color="pink-dark" size="large" expand="block">しらべたせんしゅ<ion-icon slot="end" name="search"></ion-icon></ion-button></div>
+    <div class="class1 ion-padding"><ion-button color="blue-dark" size="large" expand="block" (click)="onPhoto()">しゃしんをとる<ion-icon slot="end" name="logo-instagram"></ion-icon></ion-button></div>
+    <ion-progress-bar value="0.25" buffer="0.5" ></ion-progress-bar>
+    <!--<strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  -->
+</div>
 </ion-content>
+<!--<ion-icon name="cog-outline"></ion-icon>-->

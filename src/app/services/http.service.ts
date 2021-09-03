@@ -6,7 +6,14 @@ import { environment } from 'src/environments/environment';
 
 const HTTP_OPTIONS = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/x-www-form-urlencoded; charset=UTF-8'
+    // 'Content-Type':  'application/x-www-form-urlencoded; charset=UTF-8'
+    'Content-Type':  'application/json; charset=UTF-8',
+    'Authorization': `Bearer ${localStorage.token}`
+  })
+};
+const HTTP_OPTIONS_GET = {
+  headers: new HttpHeaders({
+    'Authorization': `Bearer ${localStorage.token}`
   })
 };
 
@@ -46,6 +53,22 @@ export class HttpService {
     let postUrl: string;
     postUrl = _postUrl;
     ret = this._http.post(postUrl, _trans_data, HTTP_OPTIONS)
+    .pipe(
+      timeout(5000),
+      catchError(this.handleError())
+    );
+    return ret;
+  }
+  public httpGet(_postUrl: string, _token: any): Observable<any> {
+    let ret: Observable<any>;
+    let postUrl: string;
+    postUrl = _postUrl;
+    let header: any = new HttpHeaders({
+      'Authorization': `Bearer ${_token}`
+    })
+    console.log(_token);
+    console.log(header);
+    ret = this._http.get(postUrl, header)
     .pipe(
       timeout(5000),
       catchError(this.handleError())

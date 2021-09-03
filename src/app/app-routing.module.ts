@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -26,6 +26,14 @@ const routes: Routes = [
   {
     path: 'setting',
     loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+  },
+  {
+    path: 'athlete-modal',
+    loadChildren: () => import('./athlete-modal/athlete-modal.module').then( m => m.AthleteModalPageModule)
+  },
+  {
+    path: 'history-modal',
+    loadChildren: () => import('./history-modal/history-modal.module').then( m => m.HistoryModalPageModule)
   },
 ];
 
